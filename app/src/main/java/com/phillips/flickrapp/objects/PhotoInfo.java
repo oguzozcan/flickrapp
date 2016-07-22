@@ -21,7 +21,6 @@ public class PhotoInfo {
         return owner;
     }
 
-
     public Dates getDates() {
         return dates;
     }

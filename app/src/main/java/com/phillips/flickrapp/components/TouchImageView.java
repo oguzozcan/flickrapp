@@ -213,9 +213,7 @@ public class TouchImageView extends ImageView {
                 return;
             int bmWidth = drawable.getIntrinsicWidth();
             int bmHeight = drawable.getIntrinsicHeight();
-
-            Log.d("bmSize", "bmWidth: " + bmWidth + " bmHeight : " + bmHeight);
-
+            //Log.d("bmSize", "bmWidth: " + bmWidth + " bmHeight : " + bmHeight);
             float scaleX = (float) viewWidth / (float) bmWidth;
             float scaleY = (float) viewHeight / (float) bmHeight;
             scale = Math.min(scaleX, scaleY);

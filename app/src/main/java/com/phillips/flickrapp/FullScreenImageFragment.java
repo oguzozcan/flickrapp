@@ -115,7 +115,9 @@ public class FullScreenImageFragment extends Fragment {
                     owner.setText(user.getUsername());
                 }
                 if(dates != null){
-                    postDate.setText(photoInfo.getDates().getPostDate());
+                    //Log.d("FullScreenImageFragment", "TIME: " + Utils.getDateTimeFrom(photoInfo.getDates().getLastUpdate()));
+                    String photoTakeDate = "Take Date: " + Utils.convertDateFormat(photoInfo.getDates().getTakenDate());
+                    postDate.setText(photoTakeDate);
                 }
             }
         }

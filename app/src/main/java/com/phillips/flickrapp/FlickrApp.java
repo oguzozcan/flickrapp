@@ -11,7 +11,6 @@ import com.phillips.flickrapp.services.PhotoInfoRestApi;
 import com.phillips.flickrapp.services.PhotoService;
 import com.phillips.flickrapp.services.RecentPhotosRestApi;
 import com.phillips.flickrapp.services.SearchPhotosRestApi;
-import com.squareup.leakcanary.LeakCanary;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 import com.squareup.otto.ThreadEnforcer;
@@ -43,7 +42,7 @@ public class FlickrApp extends Application{
                 //.memoryCache(new LruCache(maxSize))
                 .build();
         Picasso.setSingletonInstance(picasso);
-        LeakCanary.install(this);
+        //LeakCanary.install(this);
     }
 
     private Retrofit createRetrofitObject(String url){
@@ -70,11 +69,11 @@ public class FlickrApp extends Application{
             if (Utils.isNetworkAvailable(getApplicationContext())) {
                 Toast.makeText(getApplicationContext(), "Something went wrong, please try again" + event.getStatusCode(), Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(getApplicationContext(), "İnternetinizi kontrol edin ve tekrar deneyin.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "No connection.", Toast.LENGTH_LONG).show();
             }
         }else{
             if(event.getStatusCode() == 401){
-                Toast.makeText(getApplicationContext(), "UnAuthorized - Lütfen giriş yapın.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "UnAuthorized - Please login.", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(getApplicationContext(), event.getStatusCode() + " - " + event.getErrorMessage() , Toast.LENGTH_LONG).show();
             }
