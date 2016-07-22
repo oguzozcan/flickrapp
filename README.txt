@@ -10,7 +10,7 @@ User Scenario:
 App starts with most recent photos. User can scroll the list and open those photos on FullScreen. 
 User can also search for a specific keyword and do the same thing in those photos.
 
-Lists are endless there is Pagination on those api calls so while user see the last item in the recyclerview a new call is going to be made.
+Lists are endless, meaning there is Pagination on recyclerview so when user see the last item in the recyclerview a new call is made.
 
 Full Screen photo view is implemented with a ViewPager so user can swipe between photos even in the FullScreen mode. User can see some photo details in this screen.
 
